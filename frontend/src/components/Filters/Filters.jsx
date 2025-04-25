@@ -7,8 +7,12 @@ const Filters = ({ doctors, setFilters, filters,setMainSpec,mainSpec }) => {
 
   useEffect(() => {
     if (!doctors || !Array.isArray(doctors)) return;
-
-    if(!mainSpec){
+    console.log(doctors)
+    console.log("he")
+    
+    if(specialties.length!=0){
+      return
+    }
       const specs = new Set();
 
     doctors.forEach((doc) => {
@@ -22,7 +26,6 @@ const Filters = ({ doctors, setFilters, filters,setMainSpec,mainSpec }) => {
     setSpecialties(Array.from(specs));
     setMainSpec(Array.from(specs))
     
-    }
   }, [doctors]);
 
   const handleModeChange = (e) => {
