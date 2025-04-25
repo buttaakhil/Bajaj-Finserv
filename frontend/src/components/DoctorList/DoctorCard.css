@@ -1,0 +1,42 @@
+.doctor-card {
+    display: flex;
+    align-items: flex-start;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .doctor-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+  }
+  
+  .doctor-info {
+    flex: 1;
+  }
+  
+  .doctor-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .appointment-btn {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #0056b3;
+    background-color: white;
+    color: #0056b3;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .appointment-btn:hover {
+    background-color: #e6f0ff;
+  }
+  
