@@ -1,42 +1,103 @@
+/* Doctor Card Styling */
 .doctor-card {
-    display: flex;
-    align-items: flex-start;
-    background: white;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.doctor-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.5rem;
+  border: 2px solid #e0e0e0;
+  transition: border 0.3s ease;
+}
+
+.doctor-photo:hover {
+  border: 2px solid #007BFF;
+}
+
+.doctor-info {
+  flex: 1;
+}
+
+.doctor-info h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.doctor-info p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.doctor-info p:first-of-type {
+  font-weight: bold;
+}
+
+.appointment-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #007BFF;
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.appointment-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.appointment-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px #0056b3;
+}
+
+/* Doctor Info Hover Styling */
+.doctor-info:hover h3 {
+  color: #007BFF;
+}
+
+/* Styling for Mobile */
+@media (max-width: 768px) {
+  .doctor-card {
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   }
-  
+
   .doctor-photo {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 1rem;
+    margin-bottom: 1rem;
   }
-  
-  .doctor-info {
-    flex: 1;
-  }
-  
+
   .doctor-info h3 {
-    margin: 0;
     font-size: 1.1rem;
-    font-weight: bold;
+    text-align: center;
   }
-  
+
   .appointment-btn {
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid #0056b3;
-    background-color: white;
-    color: #0056b3;
-    border-radius: 5px;
-    cursor: pointer;
+    width: 100%;
   }
-  
-  .appointment-btn:hover {
-    background-color: #e6f0ff;
-  }
-  
+}

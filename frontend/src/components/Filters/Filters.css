@@ -1,33 +1,107 @@
-.filters-container {
-    background: #ffffff;
+/* Filter Container Styling */
+.filters {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  width: 260px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.filters:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.filter-section {
+  margin-bottom: 1.5rem;
+}
+
+.filter-section h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Label Styling */
+.filter-section label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.filter-section label:hover {
+  color: #007BFF;
+}
+
+.filter-section input[type="checkbox"],
+.filter-section input[type="radio"] {
+  margin-right: 1rem;
+  accent-color: #007BFF; /* Custom accent color for checkboxes/radio buttons */
+  transition: transform 0.2s ease;
+}
+
+.filter-section input[type="checkbox"]:checked,
+.filter-section input[type="radio"]:checked {
+  transform: scale(1.1);
+}
+
+/* Radio Button Section */
+.filter-section .radio-container {
+  margin-bottom: 1rem;
+}
+
+.filter-section .radio-container input[type="radio"] {
+  margin-right: 0.8rem;
+}
+
+/* Specialties Checkbox Section */
+.filter-section input[type="checkbox"]:checked + span {
+  color: #007BFF;
+}
+
+/* Clearer Border Styling */
+input[type="radio"]:focus, 
+input[type="checkbox"]:focus {
+  outline: none;
+  border: 2px solid #007BFF;
+}
+
+/* Section Headers */
+.filters-header {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #222;
+  text-align: center;
+}
+
+/* Section Divider */
+.filter-section:not(:last-child) {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+/* Adjusting mobile view */
+@media (max-width: 768px) {
+  .filters {
+    max-width: 100%;
     padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    width: 250px;
-  }
-  
-  .filters-header {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  .filter-section {
-    margin-bottom: 1.5rem;
-  }
-  
-  .filter-section h4 {
-    margin: 0.5rem 0;
   }
   
   .filter-section label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
+    font-size: 0.9rem;
   }
-  
-  .filter-section input[type="checkbox"],
-  .filter-section input[type="radio"] {
-    margin-right: 0.5rem;
+
+  .filter-section h4 {
+    font-size: 1rem;
   }
-  
+}

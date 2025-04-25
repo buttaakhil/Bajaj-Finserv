@@ -1,0 +1,76 @@
+/* Sort Container Styling */
+.sort-container {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 260px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sort-container:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sort-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sort-options label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.sort-options label:hover {
+  color: #007BFF;
+}
+
+.sort-options input[type="radio"] {
+  margin-right: 1rem;
+  accent-color: #007BFF; /* Custom accent color for radio buttons */
+  transition: transform 0.2s ease;
+}
+
+.sort-options input[type="radio"]:checked {
+  transform: scale(1.1);
+}
+
+/* Section Title Styling */
+.sort-container h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Focus and Border Styling */
+input[type="radio"]:focus {
+  outline: none;
+  border: 2px solid #007BFF;
+}
+
+/* Clearer Border Styling for Mobile */
+@media (max-width: 768px) {
+  .sort-container {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .sort-container h4 {
+    font-size: 1.1rem;
+  }
+
+  .sort-options label {
+    font-size: 0.9rem;
+  }
+}
