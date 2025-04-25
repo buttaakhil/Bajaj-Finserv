@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./Filters.css";
 
-const Filters = ({ doctors, setFilters, filters,setMainSpec,mainSpec }) => {
+const Filters = ({ doctors, setFilters, filters, setMainSpec, mainSpec }) => {
   const [specialties, setSpecialties] = useState([]);
   const [selectedMoc, setSelectedMoc] = useState(filters.mode || "All");
 
   useEffect(() => {
     if (!doctors || !Array.isArray(doctors)) return;
-    console.log(doctors)
-    console.log("he")
-    
-    if(specialties.length!=0){
-      return
+
+    if (specialties.length !== 0) {
+      return;
     }
-      const specs = new Set();
+
+    const specs = new Set();
 
     doctors.forEach((doc) => {
       if (doc.specialities && Array.isArray(doc.specialities)) {
@@ -24,8 +23,7 @@ const Filters = ({ doctors, setFilters, filters,setMainSpec,mainSpec }) => {
     });
 
     setSpecialties(Array.from(specs));
-    setMainSpec(Array.from(specs))
-    
+    setMainSpec(Array.from(specs));
   }, [doctors]);
 
   const handleModeChange = (e) => {
@@ -50,24 +48,25 @@ const Filters = ({ doctors, setFilters, filters,setMainSpec,mainSpec }) => {
 
   return (
     <div className="filters">
-      <div className="filter-section">
+      <div className="filter-section" data-testid="filter-header-speciality">
         <h4>Specialities</h4>
         {specialties.map((spec) => (
-          <label key={spec}>
+          <label key={spec} data-testid={`filter-specialty-${spec.replace(/\s+/g, '-')}`}>
             <input
               type="checkbox"
               value={spec}
               onChange={handleSpecialtyChange}
               checked={filters.specialities.includes(spec)} // Ensure the checkbox reflects the state
+              data-testid={`filter-specialty-${spec.replace(/\s+/g, '-')}`}
             />
             {spec}
           </label>
         ))}
       </div>
 
-      <div className="filter-section">
+      <div className="filter-section" data-testid="filter-header-moc">
         <h4>Mode of Consultation</h4>
-        <label>
+        <label data-testid="filter-video-consult">
           <input
             type="radio"
             name="mode"
@@ -78,7 +77,7 @@ const Filters = ({ doctors, setFilters, filters,setMainSpec,mainSpec }) => {
           Video Consultation
         </label>
         <br />
-        <label>
+        <label data-testid="filter-in-clinic">
           <input
             type="radio"
             name="mode"
